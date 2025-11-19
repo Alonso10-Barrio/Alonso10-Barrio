@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Alonso</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        :root {
+            --azul: #005CFF;
+            --amarillo: #FFD000;
+        }
+
+        /* LOGO */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--azul);
+            color: var(--amarillo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* NAVBAR */
+        header {
+            background: rgba(0,0,0,0.85);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--amarillo);
+        }
+
+        /* HERO */
+        .hero {
+            background: url("https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=1400&q=60")
+                center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .hero-content h1 span {
+            color: var(--amarillo);
+        }
+
+        .hero-content h2 {
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            background: var(--azul);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0041b3;
+        }
+
+        /* SOBRE MI */
+        .about {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 280px;
+            border-radius: 10px;
+            border: 4px solid var(--azul);
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--azul);
+        }
+
+        .about-text ul li {
+            margin: 5px 0;
+        }
+
+        /* PORTAFOLIO */
+        .portfolio {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .portfolio h2 {
+            font-size: 32px;
+            color: var(--azul);
+        }
+
+        .portfolio-container {
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fafafa;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #0002;
+            padding-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .btn-card {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: var(--amarillo);
+            color: black;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-card:hover {
+            background: #d9b100;
+        }
+
+        /* CONTACTO */
+        .contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            border: 2px solid var(--azul);
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 140px;
+        }
+
+        .contact button {
+            background: var(--azul);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">A</div>
+                <span class="logo-text">Alonso</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Hola, soy <span>Alonso</span></h1>
+            <h2>Desarrollador Web | Diseñador Frontend</h2>
+            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section id="sobre-mi" class="about">
+        <div class="about-img">
+            <img src="https://i.pravatar.cc/300?img=12" alt="Foto personal Alonso">
+        </div>
+        <div class="about-text">
+            <h2>Sobre mí</h2>
+            <p>Soy Alonso, un desarrollador web apasionado por crear interfaces modernas, eficientes y visualmente atractivas.</p>
+            <h3>Habilidades</h3>
+            <ul>
+                <li>HTML / CSS / JavaScript</li>
+                <li>Diseño UI/UX</li>
+                <li>Frontend moderno</li>
+                <li>Responsive Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PORTAFOLIO -->
+    <section id="portafolio" class="portfolio">
+        <h2>Mis Proyectos</h2>
+
+        <div class="portfolio-container">
+
+            <div class="card">
+                <img src="https://picsum.photos/500/300?random=101" alt="Proyecto 1">
+                <h3>Dashboard UI</h3>
+                <p>Panel administrativo con diseño moderno.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/500/300?random=102" alt="Proyecto 2">
+                <h3>Landing Page</h3>
+                <p>Página profesional para startups.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/500/300?random=103" alt="Proyecto 3">
+                <h3>App de Tareas</h3>
+                <p>Aplicación para organizar actividades.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/500/300?random=104" alt="Proyecto 4">
+                <h3>Portfolio Profesional</h3>
+                <p>Diseño elegante y personalizado.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <form>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Tu mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Alonso — Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
